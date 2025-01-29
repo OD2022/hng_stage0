@@ -111,7 +111,4 @@ Copy
 http://localhost:3000/stage0
 
 ## Conclusion
-
-This API provides a straightforward endpoint to return some basic metadata. It is a good starting point for testing out an API server built with Express and Axios. If you'd like to add more functionality, consider expanding the API with additional endpoints or integrating it with a database.
-
 For more information or to hire Node.js developers, visit: [https://hng.tech/hire/nodejs-developers](https://hng.tech/hire/nodejs-developers)
