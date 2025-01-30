@@ -17,8 +17,8 @@ app.get('/stage0', (req, res) => {
 
     const response = {
       email: Email,
-      timestamp: currentTime,
-      github: githubUrl
+      current_datetime: currentTime,
+      github_url: githubUrl
     };
 
 
