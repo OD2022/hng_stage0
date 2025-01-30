@@ -54,8 +54,8 @@ json
 Copy
 {
   "email": "myemail@gmail.com",
-  "timestamp": "2025-01-30T15:00:00.000Z",
-  "github": "https://github.com/OD2022/myrepo"
+  "current_datetime": "2025-01-30T15:00:00.000Z",
+  "github_url": "https://github.com/OD2022/hng_stage0"
 }
 email: The contact email address for the system.
 timestamp: The time the request was processed, in ISO 8601 format.
