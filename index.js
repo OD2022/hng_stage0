@@ -37,7 +37,7 @@ function isArmstrong(number) {
     return sum === number;
 }
 
-// Utility function to calculate digit sum
+// function to calculate digit sum
 function digitSum(number) {
     return number.toString().split('').reduce((acc, digit) => acc + parseInt(digit), 0);
 }
@@ -46,18 +46,18 @@ function digitSum(number) {
 
 // stage 1 endpoint
 app.get('/api/classify-number', async (req, res) => {
-    const { number } = req.query;
+  const { number } = req.query;
 
-    if (isNaN(number)) {
-        return res.status(400).json({
-            number: "alphabet",
-            error: true
-        });
-    }
+  if (!Number.isInteger(parseFloat(number)) || parseInt(number) < 0) {
+      return res.status(400).json({
+          number: "alphabet",
+          error: true
+      });
+  }
+  
+  const num = parseInt(number);
 
-    const num = parseInt(number);
-
-    // Fetch fun fact from Numbers API
+    // Fetching fun fact from Numbers API
     try {
         const response = await axios.get(`http://numbersapi.com/${num}?json`);
         const funFact = response.data.text;
@@ -67,8 +67,7 @@ app.get('/api/classify-number', async (req, res) => {
         if (isArmstrong(num)) properties.push('armstrong');
         if (num % 2 !== 0) properties.push('odd');
         if (num % 2  == 0) properties.push('even');
-      
-        // Construct response
+
         const result = {
             number: num,
             is_prime: isPrime(num),
