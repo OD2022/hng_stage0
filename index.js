@@ -74,7 +74,7 @@ app.get('/api/classify-number', async (req, res) => {
             is_prime: isPrime(Math.abs(num)),
             is_perfect: isPerfect(Math.abs(num)),
             properties: properties,
-            digit_sum: digitSum(num),
+            digit_sum: digitSum(Math.abs(num)),
             fun_fact: funFact
         };
 
