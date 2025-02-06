@@ -43,7 +43,8 @@ function digitSum(number) {
 }
 
 
-// main route
+
+// stage 1 endpoint
 app.get('/api/classify-number', async (req, res) => {
     const { number } = req.query;
 
