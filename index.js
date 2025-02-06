@@ -50,7 +50,7 @@ app.get('/api/classify-number', async (req, res) => {
 
   if (!Number.isInteger(parseFloat(number)) || parseInt(number) < 0) {
       return res.status(400).json({
-          number: "alphabet",
+          number: number,
           error: true
       });
   }
