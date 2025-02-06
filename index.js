@@ -57,23 +57,22 @@ app.get('/api/classify-number', async (req, res) => {
   }
   
   let num = parseInt(number);
-  num = Math.abs(num);
 
     // Fetching fun fact from Numbers API
     try {
-        const response = await axios.get(`http://numbersapi.com/${num}?json`);
+        const response = await axios.get(`http://numbersapi.com/${Math.abs(num)}?json`);
         const funFact = response.data.text;
 
         // Mathematical properties of the number
         const properties = [];
-        if (isArmstrong(num)) properties.push('armstrong');
-        if (num % 2 !== 0) properties.push('odd');
-        if (num % 2  == 0) properties.push('even');
+        if (isArmstrong(Math.abs(num))) properties.push('armstrong');
+        if (Math.abs(num) % 2 !== 0) properties.push('odd');
+        if (Math.abs(num) % 2  == 0) properties.push('even');
 
         const result = {
             number: num,
-            is_prime: isPrime(num),
-            is_perfect: isPerfect(num),
+            is_prime: isPrime(Math.abs(num)),
+            is_perfect: isPerfect(Math.abs(num)),
             properties: properties,
             digit_sum: digitSum(num),
             fun_fact: funFact
