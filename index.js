@@ -37,10 +37,16 @@ function isArmstrong(number) {
     return sum === number;
 }
 
+
 // function to calculate digit sum
 function digitSum(number) {
-    return number.toString().split('').reduce((acc, digit) => acc + parseInt(digit), 0);
+  if ((number) < 10) {
+      return number;
+  }
+  // Otherwise, calculate the sum of digits
+  return number.toString().split('').reduce((acc, digit) => acc + parseInt(digit), 0);
 }
+
 
 
 
@@ -71,7 +77,7 @@ app.get('/api/classify-number', async (req, res) => {
 
         const result = {
             number: num,
-            is_prime: isPrime(Math.abs(num)),
+            is_prime: isPrime((num)),
             is_perfect: isPerfect(Math.abs(num)),
             properties: properties,
             digit_sum: digitSum(Math.abs(num)),
